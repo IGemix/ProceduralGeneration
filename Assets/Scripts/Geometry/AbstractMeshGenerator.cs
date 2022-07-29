@@ -50,10 +50,10 @@ public abstract class AbstractMeshGenerator : MonoBehaviour {
 
         // Check there are the correct number of normals - there should be the same number of normals as there are vertices.
         // Similar for tangests, uvs, vertexColours
-        errorStr += (normals.Count == numVertices || normals.Count == 0) ? "" : "Should be " + numTriangles + " normals, but there are " + normals.Count + ". ";
-        errorStr += (tangents.Count == numVertices || tangents.Count == 0) ? "" : "Should be " + numTriangles + " normals, but there are " + tangents.Count + ". ";
-        errorStr += (uvs.Count == numVertices || uvs.Count == 0) ? "" : "Should be " + numTriangles + " normals, but there are " + uvs.Count + ". ";
-        errorStr += (vertexColours.Count == numVertices || vertexColours.Count == 0) ? "" : "Should be " + numTriangles + " normals, but there are " + vertexColours.Count + ". ";
+        errorStr += (normals.Count == numVertices || normals.Count == 0) ? "" : "Should be " + numVertices + " normals, but there are " + normals.Count + ". ";
+        errorStr += (tangents.Count == numVertices || tangents.Count == 0) ? "" : "Should be " + numVertices + " tangents, but there are " + tangents.Count + ". ";
+        errorStr += (uvs.Count == numVertices || uvs.Count == 0) ? "" : "Should be " + numVertices + " uvs, but there are " + uvs.Count + ". ";
+        errorStr += (vertexColours.Count == numVertices || vertexColours.Count == 0) ? "" : "Should be " + numVertices + " vertex colours, but there are " + vertexColours.Count + ". ";
 
 
         bool isValid = string.IsNullOrEmpty(errorStr);
