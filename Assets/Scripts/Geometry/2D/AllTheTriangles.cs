@@ -29,19 +29,8 @@ public class AllTheTriangles : AbstractMeshGenerator {
         }
     }
 
-    protected override void SetNormals() {
-
-    }
-
-    protected override void SetTangents() {
-
-    }
-
-    protected override void SetUVs() {
-
-    }
-
-    protected override void SetVertexColours() {
-
-    }
+    protected override void SetNormals() { }
+    protected override void SetTangents() { }
+    protected override void SetUVs() { }
+    protected override void SetVertexColours() { }
 }

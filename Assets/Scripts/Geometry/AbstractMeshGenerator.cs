@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [RequireComponent(typeof(MeshFilter)), RequireComponent(typeof(MeshRenderer)), RequireComponent(typeof(MeshCollider))]
-[ExecuteInEditMode]
+[ExecuteInEditMode] // Remove this in an actual game
 public abstract class AbstractMeshGenerator : MonoBehaviour {
 
     [SerializeField] protected Material material;
@@ -24,6 +25,7 @@ public abstract class AbstractMeshGenerator : MonoBehaviour {
     private MeshCollider meshCollider;
     private Mesh mesh;
 
+    // Change to Start/Awake to optimize
     private void Update() {
         meshFilter = GetComponent<MeshFilter>();
         meshRenderer = GetComponent<MeshRenderer>();
@@ -111,6 +113,7 @@ public abstract class AbstractMeshGenerator : MonoBehaviour {
     protected abstract void SetVertecies();
     protected abstract void SetTriangles();
 
+    // Optional
     protected abstract void SetNormals();
     protected abstract void SetTangents();
     protected abstract void SetUVs();

@@ -32,14 +32,9 @@ public class AllTheSharedVertTetrahedrons : AbstractMeshGenerator {
         triangles.Add(0);
 
     }
-    protected override void SetNormals() {
-    }
+    protected override void SetNormals() { }
+    protected override void SetTangents() { }
 
-    protected override void SetTangents() {
-    }
-
-    protected override void SetUVs() {
-    }
-    protected override void SetVertexColours() {
-    }
+    protected override void SetUVs() { }
+    protected override void SetVertexColours() { }
 }

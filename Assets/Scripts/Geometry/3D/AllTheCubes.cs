@@ -12,6 +12,8 @@ public class AllTheCubes : AbstractMeshGenerator {
     }
 
     protected override void SetVertecies() {
+
+        // Sides
         vertices.Add(vs[3]);
         vertices.Add(vs[1]);
         vertices.Add(vs[2]);
@@ -69,19 +71,8 @@ public class AllTheCubes : AbstractMeshGenerator {
         }
     }
 
-    protected override void SetNormals() {
-
-    }
-
-    protected override void SetTangents() {
-
-    }
-
-    protected override void SetUVs() {
-
-    }
-
-    protected override void SetVertexColours() {
-
-    }
+    protected override void SetNormals() { }
+    protected override void SetTangents() { }
+    protected override void SetUVs() { }
+    protected override void SetVertexColours() { }
 }

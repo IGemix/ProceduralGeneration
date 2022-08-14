@@ -8,6 +8,8 @@ public class AllThePrisms : AbstractMeshGenerator {
     [SerializeField] private float backRadius;
     [SerializeField] private float length;
 
+    private Vector3[] vs;
+
     [SerializeField] private Gradient gradient;
     protected override void SetMeshNum() {
         numVertices = 6 * numSides; // numSides vertices on each end, 4 on each length-side
@@ -15,7 +17,7 @@ public class AllThePrisms : AbstractMeshGenerator {
     }
     protected override void SetVertecies() {
         // Cordinates of a regular polygon
-        Vector3[] vs = new Vector3[numSides * 2];
+        vs = new Vector3[numSides * 2];
 
         // Set the vs
         for (int i = 0; i < numSides; i++) {
@@ -84,7 +86,28 @@ public class AllThePrisms : AbstractMeshGenerator {
             vertexColours.Add(gradient.Evaluate((float)i / numVertices));
         }
     }
+    protected override void SetUVs() { 
+        // Poligon End
+        for (int i = 0; i < numSides; i++) {
+            uvs.Add(vs[i]);
+        }
+
+        // Middle
+        for (int i = 0; i < numSides; i++) {
+            // The sides are all Rectangles 
+            uvs.Add(new Vector2(frontRadius, 0));
+            uvs.Add(new Vector2(0, length));
+            uvs.Add(new Vector2(0, 0));
+            uvs.Add(new Vector2(backRadius, length));
+
+        }
+
+        // Other Polygon End
+        for (int i = 0; i < numSides; i++) {
+            uvs.Add(vs[i + numSides]);
+        }
+    }
+
     protected override void SetNormals() { }
     protected override void SetTangents() { }
-    protected override void SetUVs() { }
 }

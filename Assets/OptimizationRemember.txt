@@ -1,0 +1,1 @@
+When using in an actual game, change the Updates in the scripts into Start or Awake
